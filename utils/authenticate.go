@@ -1,15 +1,15 @@
 package utils
 
 import (
-	"net/url"
-	"sort"
 	"crypto/hmac"
 	"crypto/sha1"
 	"encoding/base64"
-	"time"
-	"github.com/google/uuid"
 	"encoding/json"
+	"github.com/google/uuid"
+	"net/url"
+	"sort"
 	"strings"
+	"time"
 )
 
 var (

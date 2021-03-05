@@ -2,10 +2,10 @@ package utils
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"encoding/json"
 )
 
 type CommonReturn struct {
@@ -35,6 +35,9 @@ func DoHttpPost(action, url, method string, reqBody []byte) CommonReturn {
 	fmt.Println("response Body:", string(body))
 
 	commonReturn := CommonReturn{}
-	json.Unmarshal(body, &commonReturn)
+	err = json.Unmarshal(body, &commonReturn)
+	if err != nil {
+		panic(err)
+	}
 	return commonReturn
 }
