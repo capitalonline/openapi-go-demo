@@ -1,15 +1,15 @@
 package utils
 
 import (
-	"net/url"
-	"sort"
 	"crypto/hmac"
 	"crypto/sha1"
 	"encoding/base64"
-	"time"
-	"github.com/google/uuid"
 	"encoding/json"
+	"github.com/google/uuid"
+	"net/url"
+	"sort"
 	"strings"
+	"time"
 )
 
 var (
@@ -19,9 +19,9 @@ var (
 
 func percentEncode(str string) string {
 	str = url.QueryEscape(str)
-	strings.Replace(str, "+", "%20", -1)
-	strings.Replace(str, "*", "%2A", -1)
-	strings.Replace(str, "%7E", "~", -1)
+	str = strings.Replace(str, "+", "%20", -1)
+	str = strings.Replace(str, "*", "%2A", -1)
+	str = strings.Replace(str, "%7E", "~", -1)
 	return str
 }
 
