@@ -1,8 +1,8 @@
 package test
 
 import (
-	"openapi-go-demo/example"
 	"fmt"
+	"openapi-go-demo/example"
 	"testing"
 )
 
