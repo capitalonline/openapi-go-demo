@@ -97,3 +97,75 @@ func DescribeBandwidthTraffic(NetworkId string) utils.CommonReturn {
 	res := utils.DoHttpPost(action, NetworkUrl, method, body)
 	return res
 }
+
+func BiVdcList(StartTime string, EndTime string, VdcId string) utils.CommonReturn {
+	action := "BiVDCList"
+	method := "POST"
+	param := map[string]string{
+		"StartTime": StartTime,
+		"EndTime":   EndTime,
+	}
+	if VdcId != "" {
+		param["VdcId"] = VdcId
+	}
+	body, err := json.Marshal(param)
+	if err != nil {
+		panic(err)
+	}
+	res := utils.DoHttpPost(action, NetworkUrl, method, body)
+	return res
+}
+
+func BiVdcFlow(StartTime string, EndTime string, VdcId string) utils.CommonReturn {
+	action := "BiVDCFlow"
+	method := "POST"
+	param := map[string]string{
+		"StartTime": StartTime,
+		"EndTime":   EndTime,
+	}
+	if VdcId != "" {
+		param["VdcId"] = VdcId
+	}
+	body, err := json.Marshal(param)
+	if err != nil {
+		panic(err)
+	}
+	res := utils.DoHttpPost(action, NetworkUrl, method, body)
+	return res
+}
+
+func BiGpnBandwidth(StartTime string, EndTime string, GpnId string) utils.CommonReturn {
+	action := "BiGPNBandWidth"
+	method := "POST"
+	param := map[string]string{
+		"StartTime": StartTime,
+		"EndTime":   EndTime,
+	}
+	if GpnId != "" {
+		param["GpnId"] = GpnId
+	}
+	body, err := json.Marshal(param)
+	if err != nil {
+		panic(err)
+	}
+	res := utils.DoHttpPost(action, NetworkUrl, method, body)
+	return res
+}
+
+func BiVdcPublicIp(StartTime string, EndTime string, VdcId string) utils.CommonReturn {
+	action := "BiVDCPublicIp"
+	method := "POST"
+	param := map[string]string{
+		"StartTime": StartTime,
+		"EndTime":   EndTime,
+	}
+	if VdcId != "" {
+		param["VdcId"] = VdcId
+	}
+	body, err := json.Marshal(param)
+	if err != nil {
+		panic(err)
+	}
+	res := utils.DoHttpPost(action, NetworkUrl, method, body)
+	return res
+}
