@@ -246,6 +246,7 @@ type HistoryInstance struct {
 	Cpu            int
 	Ram            int
 	RegionId       string
+	ProjectName    string
 	TotalDiskSize  int
 }
 
